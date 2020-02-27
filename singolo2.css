@@ -1,0 +1,101 @@
+@import './fonts.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: LatoBold, sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.portfolio {
+    background-color: #2d303a;
+    box-shadow: 0px 6px 0px #323746;
+}
+
+.wrapper {
+    width: 1020px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.portfolio .wrapper {
+    height: 864px;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio__title {
+    font-family: LatoBlack, sans-serif;
+    margin-top: 60px;
+    font-size: 3rem;
+    color: #666d89;
+    letter-spacing: 0.3px;
+    cursor: default;
+}
+
+.portfolio__description {
+    color: #666d89;
+    font-family: LatoLight, sans-serif;
+    font-size: 1.8rem;
+    cursor: default;
+    line-height: 2;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    letter-spacing: -0.2px;
+}
+
+.tag {
+    color: #666d89;
+    font-family: LatoRegular, sans-serif;
+    font-size: 1.1rem;
+    cursor: default;
+    line-height: 0;
+    font-weight: 300;
+    letter-spacing: 0px;
+    padding: 3px 8px 4px 8px;
+    border: 1px solid #666d89;
+    border-radius: 5px;
+    margin-right: 7px; 
+}
+
+.tag:hover {
+    cursor: pointer;
+    color: #fff;
+    border-color: #fff; 
+}
+
+.tag_selected {
+    color: #fff;
+    border-color: #fff;
+}
+
+.portfolio__tags {
+    margin-top: 7px;
+}
+
+.layout-4-column {
+    margin-top: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    height: 621px;
+}
+
+.layout-4-column img {
+    width: 220px;
+    height: 187px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.layout-4-column img:nth-child(4n){
+    margin-right: 0px; 
+}

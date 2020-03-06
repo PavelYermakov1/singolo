@@ -1,1 +1,213 @@
 @import './fonts.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: LatoBold, sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.wrapper {
+    width: 1020px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.get-a-quote {
+    background-color: #f06c64;
+    border-bottom: 6px solid #ea676b;
+}
+
+.get-a-quote .wrapper {
+    height: 648px;
+    display: flex;
+    flex-direction: column;
+}
+
+.get-a-quote__title {
+    font-family: LatoBlack, sans-serif;
+    margin-top: 59px;
+    font-size: 3rem;
+    color: #f0d8d9;
+    letter-spacing: -0.2px;
+    cursor: default;
+}
+
+.get-a-quote__description {
+    color: #f0d8d9;
+    font-family: LatoLight, sans-serif;
+    font-size: 1.8rem;
+    cursor: default;
+    line-height: 1.7;
+    margin-top: 18px;
+    text-align: justify;
+    word-spacing: -1.5px;
+}
+
+.get-a-quote__form {
+    font-family: LatoRegular, sans-serif;
+    display: inline-block;
+    width: 615px;
+    margin-right: 20px;
+    margin-top: 43px;
+}
+
+.get-a-quote__form input{
+    width: 619px;
+    border: none;
+    background-color: #d6564f;
+    border-radius: 5px;
+    height: 38px;
+    margin-bottom: 16px;
+    color: white;
+    font-size: 1.6rem;
+    font-family: LatoRegular, sans-serif;
+    letter-spacing: 1px;
+    padding-left: 5px;
+}
+
+.get-a-quote__form textarea{
+    width: 619px;
+    border: none;
+    background-color: #d6564f;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    resize: none;
+    color: white;
+    font-size: 1.6rem;
+    font-family: LatoRegular, sans-serif;
+    letter-spacing: 1px;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.get-a-quote__form input::placeholder {
+    font-family: LatoRegular, sans-serif;
+    font-size: 1.2rem;
+    color: #e87878;
+    padding-left: 10px;
+    letter-spacing: 0.5px;   
+}
+
+.get-a-quote__form textarea::placeholder{
+    font-family: LatoRegular, sans-serif;
+    font-size: 1.2rem;
+    color: #e87878;
+    padding-left: 10px;
+    letter-spacing: 0px;
+    padding-top: 10px;   
+}
+
+input[type="submit"]{
+    color: #f0d8d9;
+    width: 150px;
+    border: 2px solid #ea676b;
+}
+
+input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: #f0d8d9;
+    color: black;
+    border: 2px solid #ea676b;
+}
+
+.get-a-quote__content {
+    display: inline-block;
+    width: 300px;
+    vertical-align: top;
+    margin-left: 1px;
+}
+
+.contetn__title {
+    font-family: LatoBlack, sans-serif;
+    margin-top: 42px;
+    font-size: 1.8rem;
+    color: #f0d8d9;
+    letter-spacing: 0px;
+    cursor: default;
+}
+
+.content__description {
+    color: #f0d8d9;
+    font-family: LatoRegular, sans-serif;
+    font-size: 1.2rem;
+    cursor: default;
+    line-height: 1.9;
+    margin-top: 8px;
+    overflow: hidden;
+    text-align: justify;
+    letter-spacing: -0.2px;
+    margin-bottom: 24px;
+}
+
+.contacts {
+    font-family: LatoRegular, sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 5.5px;
+    cursor: default;
+    color: #f0d8d9;
+}
+
+.contacts a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.contacts a:hover{
+    text-decoration: underline #f0d8d9;
+}
+
+.contacts div{
+    display: inline-block;
+    width: 13px;
+    height: 11px;
+    margin-right: 7px;
+    text-align: center;
+}
+
+.footer {
+    background-color: #2d303a;
+}
+
+.footer .wrapper {
+    height: 76px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row; 
+}
+
+.rights{
+    width: 200px;
+    margin-left: 2px;
+    padding-top: 30px;
+    font-size: 1.2rem;
+    color: #666d89;
+    letter-spacing: -0.2px;
+}
+
+.social-networks {
+    float: right;
+    margin-top: 22px;
+    text-align: right;
+}
+
+.social-networks a {
+    cursor: default;
+}
+
+.social-networks img {
+    margin-right: 4px;
+}
+
+.social-networks img:hover {
+    filter: brightness(0);
+    cursor: pointer;
+}

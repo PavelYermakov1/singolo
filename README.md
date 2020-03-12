@@ -1,1 +1,1 @@
-# https://pavelyermakov1.github.io/singolo/
+# https://pavelyermakov1.github.io/singolo

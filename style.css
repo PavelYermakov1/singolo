@@ -563,3 +563,7 @@ input[type="submit"]:hover{
     filter: brightness(10);
     cursor: pointer;
 }
+
+.bordered {
+    border: 5px solid #F06C64;
+}

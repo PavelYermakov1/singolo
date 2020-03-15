@@ -37,14 +37,46 @@ let currentItem = 0;
 let isEnabled = true;
 
 
+let anchor = body.querySelectorAll(".mark"),
+    anchors = {},
+    i = 0;
+    
+Array.prototype.forEach.call(anchor, function(e) {
+    anchors[e.id] = e.offsetTop - 100;
+});
+    
+anchors.CONTACT = 2800;
+window.addEventListener("scroll", () => {
+    let scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
+    for (i in anchors) {
+        if (anchors[i] <= scrollPosition) {
+            document.querySelector('.active').classList.remove("active");
+            document.querySelector(`a[href*= ${i} ]`).classList.add("active");
+        }
+    }
+});
 
-window.onscroll = () => {
+
+
+
+window.addEventListener('scroll', () => {
     if (window.pageYOffset >= sticky) {
         navigation.classList.add("navigation__fixed")
     } else 
-        navigation.classList.remove("navigation__fixed"); 
-};
+        navigation.classList.remove("navigation__fixed");
+}); 
 
+
+for (let elem of headerNavigation) {
+    elem.addEventListener("click", (event) => {
+        event.preventDefault();
+        const sectionId = elem.getAttribute("href");
+        document.querySelector(`${sectionId}`).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        })
+    })
+}
 
 
 for(let elem of headerNavigation) {

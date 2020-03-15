@@ -170,13 +170,28 @@
                 <h2 class="get-a-quote__title">Get a Quote</h2>
                 <p class="get-a-quote__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                 <div class="layout-2-column">
-                    <form class="get-a-quote__form">
-                        <div><input type="text" name="name" placeholder="Name(Required)" pattern="^[ A-Za-z]{3,}" required></div>
-                        <div><input type="email" name="email" placeholder="Email(Required)" pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" required></div>
-                        <div><input type="text" name="subject" placeholder="Subject"></div>
-                        <textarea  name="descritrion" placeholder="Describe your project in detail..."  rows="10"></textarea>
+                    <form class="get-a-quote__form" action method="post">
+                        <div><input class="input_name" type="text" name="name" placeholder="Name(Required)" pattern="([A-Za-z\sА-Яа-яЁё0-9.])+" required></div>
+                        <div><input class="input_email" type="email" name="email" placeholder="Email(Required)" pattern="([A-Za-z0-9._-])+@([A-Za-z0-9-_])+\.([a-z]){2,3}" required></div>
+                        <div><input class="subject" type="text" name="subject" placeholder="Subject"></div>
+                        <textarea class="textarea"  name="descritrion" placeholder="Describe your project in detail..."  rows="10"></textarea>
                         <div><input type="submit" name="submit" value="Submit"></div>
                     </form>
+                    <div class="pop-up__window disabled">
+                        <div class="pop-up__content">
+                            <div class="pop-up__header">
+                                <p class="pop-up_message">Письмо отправлено</p>
+                                <span class="pop-up_close">x</span>
+                            </div>
+                            <div class="pop-up__main">
+                                <p class="topic_result"></p>
+                                <p class="description-result"></p>
+                            </div>
+                            <div class="pop-up__footer">
+                                <button class="close_button">Ok</button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="get-a-quote__content">
                         <h3 class="contetn__title">Contact Information</h3>
                         <p class="content__description">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.</p>

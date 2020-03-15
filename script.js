@@ -1,6 +1,4 @@
-const state = {
-    
-};
+
 const body = document.body;
 
 Array.prototype.shuffle = function() {
@@ -15,8 +13,13 @@ Array.prototype.shuffle = function() {
 	return this;
   }
 
+  Array.prototype.snake = function() {
+      this.unshift(this[this.length - 1]);
+      this.pop();
+      return this;
+  }
 
-const arr = [1,2,3,4,5,6,7,8,9,10,11,12];
+let arr = [1,2,3,4,5,6,7,8,9,10,11,12];
 const findPictures = body.querySelectorAll('.layout-4-column > img');
 const potfolioNavigation = body.querySelectorAll('.tag');
 const headerNavigation = body.querySelectorAll('.navigation > li > a');
@@ -28,8 +31,20 @@ const items = body.querySelectorAll('.slider-item');
 const slideBackground = body.querySelector(".slider");
 const arrowLeft = body.querySelector('.arrow.slider_left');
 const arrowRight = body.querySelector('.arrow.slider_right');
+const navigation = body.querySelector("nav");
+let sticky = navigation.offsetTop;
 let currentItem = 0;
 let isEnabled = true;
+
+
+
+window.onscroll = () => {
+    if (window.pageYOffset >= sticky) {
+        navigation.classList.add("navigation__fixed")
+    } else 
+        navigation.classList.remove("navigation__fixed"); 
+};
+
 
 
 for(let elem of headerNavigation) {
@@ -44,9 +59,9 @@ for(let elem of headerNavigation) {
 for (let elem of potfolioNavigation) {
     elem.addEventListener("click", (event) => {
         target = event.target;
-        let array = arr.shuffle();
+        arr = arr.snake();
         for(let i = 0; i < arr.length; i++) {
-            findPictures[i].src = `./assets/image/Picture-${array[i]}.png`;
+            findPictures[i].src = `./assets/image/Picture-${arr[i]}.png`;
         }
         potfolioNavigation.forEach(e => e.classList.remove("tag_selected"));
         target.classList.toggle("tag_selected");
@@ -129,4 +144,33 @@ for (let elem of homeButtons) {
             thirdScreen.classList.toggle("disabled");  
         }   
     });
+}
+
+
+const form = document.querySelector(".get-a-quote__form");
+const popup = document.querySelector(".pop-up__window");
+const closeButton = document.querySelector(".close_button");
+const popupCLose = document.querySelector(".pop-up_close");
+const inputSubject = document.querySelector(".subject"); 
+const textarea = document.querySelector(".textarea");
+const popupTopicResult = document.querySelector(".topic_result");
+const popupDescriptionResult = document.querySelector(".description-result");
+
+popupCLose.addEventListener("click", closePopup);
+closeButton.addEventListener("click", closePopup);
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (form.checkValidity()) {
+        popupTopicResult.innerHTML = (inputSubject.value) ?  "Тема: " + inputSubject.value : "Без темы";
+        popupDescriptionResult.innerHTML = (textarea.value) ? "Описание: " + textarea.value : "Без описания";
+        popup.classList.remove("disabled");
+    }
+    form.reset();
+    return false;
+});
+
+function closePopup() {
+    form.reset()
+    popup.classList.add("disabled");
 }

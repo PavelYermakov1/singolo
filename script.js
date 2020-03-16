@@ -27,7 +27,7 @@ const firstScreen = body.querySelector(".iphone-slide1-screen_first");
 const secondScreen = body.querySelector(".iphone-slide1-screen_second");
 const thirdScreen = body.querySelector(".iphone-slide2-screen");
 const homeButtons = body.querySelectorAll(".home");
-const items = body.querySelectorAll('.slider-item');
+const sliderItems = body.querySelectorAll('.slider-item');
 const slideBackground = body.querySelector(".slider");
 const arrowLeft = body.querySelector('.arrow.slider_left');
 const arrowRight = body.querySelector('.arrow.slider_right');
@@ -37,19 +37,19 @@ let currentItem = 0;
 let isEnabled = true;
 
 
-let anchor = body.querySelectorAll(".mark"),
-    anchors = {},
+let mark = body.querySelectorAll(".mark"),
+    marks = {},
     i = 0;
     
-Array.prototype.forEach.call(anchor, function(e) {
-    anchors[e.id] = e.offsetTop - 100;
+Array.prototype.forEach.call(mark, function(e) {
+    marks[e.id] = e.offsetTop - 100;
 });
     
-anchors.CONTACT = 2800;
+marks.CONTACT = 2800;
 window.addEventListener("scroll", () => {
     let scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
-    for (i in anchors) {
-        if (anchors[i] <= scrollPosition) {
+    for (i in marks) {
+        if (marks[i] <= scrollPosition) {
             document.querySelector('.active').classList.remove("active");
             document.querySelector(`a[href*= ${i} ]`).classList.add("active");
         }
@@ -116,21 +116,21 @@ for(let elem of findPictures) {
 
 
 function changeCurrentItem(n) {
-	currentItem = (n + items.length) % items.length;
+	currentItem = (n + sliderItems.length) % sliderItems.length;
 }
 
 function hideItem(direction) {
 	isEnabled = false;
-	items[currentItem].classList.add(direction);
-	items[currentItem].addEventListener('animationend', (event) => {
+	sliderItems[currentItem].classList.add(direction);
+	sliderItems[currentItem].addEventListener('animationend', (event) => {
         target = event.target;
         target.classList.remove('active-item', direction);
 	});
 }
 
 function showItem(direction) {
-	items[currentItem].classList.add('next', direction);
-	items[currentItem].addEventListener('animationend', (event) => {
+	sliderItems[currentItem].classList.add('next', direction);
+	sliderItems[currentItem].addEventListener('animationend', (event) => {
         target = event.target;
 		target.classList.remove('next', direction);
         target.classList.add('active-item');

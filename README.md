@@ -1,1 +1,1 @@
-# singolo
+# https://pavelyermakov1.github.io/singolo

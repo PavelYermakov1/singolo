@@ -6,30 +6,53 @@
     <title>Singolo</title>
 </head>
 <body>
-    <header class="header">
+    <header class="header mark" id="HOME">
         <div class="wrapper">
             <h1 class="logo">SINGOLO<span>*</span></h1>
             <nav class="header__navigation">
                 <ul class="navigation">
-                    <li class="navigation_item"><span>HOME</span></li>
-                    <li class="navigation_item"><span>SERVICES</span></li>
-                    <li class="navigation_item"><span>PORTFOLIO</span></li>
-                    <li class="navigation_item"><span>ABOUT</span></li>
-                    <li class="navigation_item"><span>CONTACT</span></li>
+                    <li class="navigation_item"><a class="active" href="#HOME">HOME</a></li>
+                    <li class="navigation_item"><a href="#SERVICES">SERVICES</a></li>
+                    <li class="navigation_item"><a href="#PORTFOLIO">PORTFOLIO</a></li>
+                    <li class="navigation_item"><a href="#ABOUT">ABOUT</a></li>
+                    <li class="navigation_item"><a href="#CONTACT">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <section class="slider">
+        <section class="slider slider_red">
             <div class="wrapper">
-                <img class="slider_left" alt="arrow" src="./assets/image/slider_left.png">
-                <img class="phone_vertical" alt="arrow" src="./assets/image/phone_vertical.png">
-                <img class="phone_horizontal" alt="arrow" src="./assets/image/phone_horizontal.png">
-                <img class="slider_right" alt="arrow" src="./assets/image/slider_right.png">
+                <div class="slider__arrow">
+                    <img class="slider_left arrow" alt="arrow" src="./assets/image/slider/slider_left.png">
+                    <img class="slider_right arrow" alt="arrow" src="./assets/image/slider/slider_right.png">
+                </div>
+                <div class="slider-item active-item">
+                    <div class="slider__phone-slide1">
+                        <img src="./assets/image/slider/slide1/Cam.png" class="iphone-slide1-cam_first" alt="Cam">
+                        <img src="./assets/image/slider/slide1/Screen1.png" class="iphone-slide1-screen_first" alt="Screen">
+                        <img src="./assets/image/slider/slide1/Shadow.png" class="iphone-slide1-shadow_first" alt="Shadow">
+                        <img src="./assets/image/slider/slide1/Home.png" class="home iphone-slide1-home_first" alt="Home1">
+                        <img src="./assets/image/slider/slide1/Cam.png" class="iphone-slide1-cam-second" alt="Cam">
+                        <img src="./assets/image/slider/slide1/Screen2.png" class="iphone-slide1-screen_second" alt="Screen">                                      
+                        <img src="./assets/image/slider/slide1/Shadow.png" class="iphone-slide1-shadow_second" alt="Shadow">
+                        <img src="./assets/image/slider/slide1/Home.png" class="home iphone-slide1-home_second" alt="Home2">
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="slider__phone-slide2">
+                        <img src="./assets/image/slider/slide2/Cam.png" class="iphone-slide2-cam" alt="Cam">
+                        <img src="./assets/image/slider/slide2/Screen.png" class="iphone-slide2-screen" alt="Screen">
+                        <img src="./assets/image/slider/slide2/Shadow.png" class="iphone-slide2-shadow" alt="Shadow">
+                        <img src="./assets/image/slider/slide2/Home.png" class="home iphone-slide2-home" alt="Home3">
+                        <img src="./assets/image/slider/slide2/Phone.png" class="iphone-slide2-phone_first" alt="Phone">
+                        <img src="./assets/image/slider/slide2/Phone.png" class="iphone-slide2-phone_second" alt="Phone">
+                    </div>
+                </div>
+                
             </div>
         </section>
-        <section class="our-services">
+        <section class="our-services mark" id="SERVICES">
             <div class="wrapper">
                 <h2 class="services__title">Our Services</h2>
                 <p class="services__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. 
@@ -75,7 +98,7 @@
                 </div>
             </div>
         </section>
-        <section class="portfolio">
+        <section class="portfolio mark" id="PORTFOLIO">
             <div class="wrapper">
                 <h2 class="portfolio__title">Portfolio</h2>
                 <p class="portfolio__description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
@@ -101,7 +124,7 @@
                 </div>
             </div>
         </section>
-        <section class="about-us">
+        <section class="about-us mark" id="ABOUT">
             <div class="wrapper">
                 <h2 class="about-us__title">About Us</h2>
                 <p class="about-us__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -142,18 +165,33 @@
                 </div>
             </div>
         </section>
-        <section class="get-a-quote">
+        <section class="get-a-quote mark" id="CONTACT">
             <div class="wrapper">
                 <h2 class="get-a-quote__title">Get a Quote</h2>
                 <p class="get-a-quote__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                 <div class="layout-2-column">
-                    <form class="get-a-quote__form">
-                        <div><input type="text" name="name" placeholder="Name(Required)" pattern="^[ A-Za-z]{3,}" required></div>
-                        <div><input type="email" name="email" placeholder="Email(Required)" pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" required></div>
-                        <div><input type="text" name="subject" placeholder="Subject"></div>
-                        <textarea  name="descritrion" placeholder="Describe your project in detail..."  rows="10"></textarea>
+                    <form class="get-a-quote__form" action method="post">
+                        <div><input class="input_name" type="text" name="name" placeholder="Name(Required)" pattern="([A-Za-z\sА-Яа-яЁё0-9.])+" required></div>
+                        <div><input class="input_email" type="email" name="email" placeholder="Email(Required)" pattern="([A-Za-z0-9._-])+@([A-Za-z0-9-_])+\.([a-z]){2,3}" required></div>
+                        <div><input class="subject" type="text" name="subject" placeholder="Subject"></div>
+                        <textarea class="textarea"  name="descritrion" placeholder="Describe your project in detail..."  rows="10"></textarea>
                         <div><input type="submit" name="submit" value="Submit"></div>
                     </form>
+                    <div class="pop-up__window disabled">
+                        <div class="pop-up__content">
+                            <div class="pop-up__header">
+                                <p class="pop-up_message">Письмо отправлено</p>
+                                <span class="pop-up_close">x</span>
+                            </div>
+                            <div class="pop-up__main">
+                                <p class="topic_result"></p>
+                                <p class="description-result"></p>
+                            </div>
+                            <div class="pop-up__footer">
+                                <button class="close_button">Ok</button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="get-a-quote__content">
                         <h3 class="contetn__title">Contact Information</h3>
                         <p class="content__description">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.</p>
@@ -182,6 +220,6 @@
             </div>
         </div>  
     </footer>
-    
+<script async src="./script.js"></script>    
 </body>
 </html>

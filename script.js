@@ -45,7 +45,7 @@ Array.prototype.forEach.call(mark, function(e) {
     marks[e.id] = e.offsetTop - 100;
 });
     
-marks.CONTACT = 2800;
+marks.CONTACT = 2700;
 window.addEventListener("scroll", () => {
     let scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
     for (i in marks) {

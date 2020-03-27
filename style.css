@@ -501,6 +501,32 @@ body {
     }
 }
 
+@media screen and (max-width: 767px) {
+    .wrapper {
+        margin: 0 auto;
+        padding: 0 30px;
+    }
+
+    .services__title {
+        margin-top: 25px;
+    }
+
+    .services__text {
+        margin-bottom: 25px;
+    }
+
+    .services {
+        margin-bottom: 0px;
+    }
+
+    .service {
+        width: 300px;
+        height: 104px;
+        margin-right: 0px;
+        margin-bottom: 15px;
+    }
+}
+
 
 .portfolio {
     background-color: #2d303a;
@@ -587,6 +613,30 @@ body {
     .layout-4-column img {
         margin-top: 10px;
         margin-bottom: 5px;
+    }
+
+    .portfolio__tags {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .portfolio__title {
+        margin-top: 42px;
+    }
+
+    .layout-4-column {
+        margin-bottom: 42px;
+        height: 154vw;
+        width: fit-content;
+    }
+
+    .layout-4-column img {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        width: 40vw;
+        height: 34vw;
+        background-size: cover;
     }
 }
 
@@ -706,6 +756,27 @@ body {
 
     .employee__social-networks {
         margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about-us__title {
+        margin-top: 33px;  
+    }
+
+    .layout-3-column {
+        margin-top: 14px;
+        margin-bottom: 12px;
+    }
+
+    .employee {
+        width: 314px;
+        padding-bottom: 34px;
+    }
+
+    .employee__photo {
+        width: 84vw;
+        height: 84vw;
     }
 }
 
@@ -845,6 +916,7 @@ input[type="submit"]:hover{
 }
 
 .contacts a{
+    font-family: LatoRegular, sans-serif;
     text-decoration: none;
     color: inherit;
 }
@@ -876,6 +948,49 @@ input[type="submit"]:hover{
         display: inline-block;
         width: 217px;
         vertical-align: top;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .get-a-quote__title {
+        margin-top: 44px; 
+    }
+
+    .get-a-quote__description {
+        margin-top: 15px;
+    }
+
+    .get-a-quote__form {
+        width: 84vw;
+        margin-right: 0px;
+        margin-top: 20px;
+    }
+
+    .get-a-quote__form input{
+        margin-bottom: 12px;
+    }
+
+    .get-a-quote__form textarea{
+        margin-bottom: 14px;   
+    }
+
+    input[type="submit"]{
+        width: 100%;
+    }
+
+    .get-a-quote__content {
+        width: 100%;
+        margin-bottom: 42px;
+    }
+
+    .contetn__title {
+        margin-top: 20px;
+    }
+
+    .content__description {
+        margin-top: 5px;
+        margin-bottom: 10px;
     }
 }
 
@@ -917,6 +1032,19 @@ input[type="submit"]:hover{
 .social-networks img:hover {
     filter: brightness(10);
     cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .rights{
+        display: none;
+    }
+    .social-networks {
+        align-items: center;
+    }
+
+    .footer .wrapper {
+        justify-content: center; 
+    }
 }
 
 .bordered {

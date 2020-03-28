@@ -206,3 +206,49 @@ function closePopup() {
     form.reset()
     popup.classList.add("disabled");
 }
+
+
+const burger = document.querySelector('.burger__menu');
+// const OVERLAY = document.querySelector('.overlay-mobile');
+
+
+burger.addEventListener('click', (event) => {
+    target = event.target;
+    console.log(getComputedStyle(navigation).display);
+    if(burger.classList.contains("active__menu")){
+        burger.classList.remove("active__menu");
+        navigation.classList.remove('mobile-active-menu');  
+    }else {
+        burger.classList.toggle("active__menu");
+        navigation.classList.add('mobile-active-menu');
+    }
+    
+});
+
+const MOBILEMENU = document.querySelector('#menu');
+
+MOBILEMENU.addEventListener('click', (event) => {
+    if (event.target.closest('ul li a')){
+        countOfClicks = (countOfClicks+1)%2;
+        hideMobileMenu();
+    }  else { 
+        event.stopPropagation();
+    }
+})
+
+OVERLAY.addEventListener('click', (event) => {
+    countOfClicks = (countOfClicks+1)%2;
+    hideMobileMenu();
+})
+
+function hideMobileMenu() {
+    BURGER.classList.remove('active');
+    NAVBAR.classList.remove('mobile-active-menu');
+    OVERLAY.classList.remove('active');
+}
+
+function showMobileMenu() {
+    BURGER.classList.add('active');
+    OVERLAY.classList.add('active');
+    NAVBAR.classList.add('mobile-active-menu');      
+}

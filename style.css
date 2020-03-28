@@ -18,11 +18,10 @@ body {
 .header {
     background-color: #2d303a;
     border-bottom: 6px solid #323746;
-    display: flex;
 }
 
 .wrapper {
-    width: 1020px;
+    max-width: 1020px;
     margin: 0 auto;
     padding: 0 40px;
 }
@@ -91,8 +90,89 @@ body {
     color: #f06c64;
 }
 
+.burger__menu {
+    display: none;
+}
+
+.burger_item {
+    width: 25px;
+    height: 2.4px;
+    background: #F6F6F7;
+    border-radius: 5px;
+    margin: 6.4px;
+}
+
+@media screen and (max-width: 767px) {
+    .burger__menu {
+        display: block;
+        z-index: 6;
+        transition: all 0.5s;
+    } 
+
+    .active__menu {
+        position: fixed;
+        display: block;
+        transform: rotate(90deg);
+        z-index: 6;
+        transition: all 0.5s;
+    }
+
+    .mobile-active-menu {
+        position: fixed;
+        left: 0%;
+        top: 0%;
+        display: block !important;
+        width: 238px;
+        height: 100vh;
+        background: #2D303A;
+        box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
+        z-index: 5;
+    }
+
+    .mobile-active-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-top: 140px;
+        padding-left: 50px;
+        height: 263px;
+    }
+
+    .navigation_item a {
+        font-size: 24px;
+        list-style: none;
+    }
+
+    .header__navigation {
+        display: none;
+    }
+
+    .header .wrapper {
+        width: 75%;
+        margin-left: 0px;
+        height: 70px;
+    }
+
+    .navigation_item {
+        list-style: none;
+    }
+ 
+    .logo {
+        z-index: 6;
+        font-size: 1.8rem;
+        position: fixed;
+        left: 100px;   
+    } 
+
+}
+
 .slider {
     overflow: hidden;
+}
+
+.slider_wrapper {
+    position: relative;
+    height: 595px;
 }
 
 .slider_red {
@@ -107,24 +187,20 @@ body {
     transition: 1.2s;
 }
 
-.slider__arrow {
-    position: relative;
-    height: 594px;
-}
 
 .arrow {
     position: absolute;
     width: 16px;
     height: 27px;
-    top: 281px;
+    top: 47.4%;
 }
 
 .slider_left {
-    left: 2px; 
+    left: 4.2%; 
 }
 
 .slider_right {
-    right: 0px;
+    right: 3.9%;
 }
 
 
@@ -186,29 +262,34 @@ body {
 .iphone-slide1-cam_first {
     position: absolute;
     z-index: 1;
-    bottom: 83px;
-    left: 72px;
+    left: 7.7%;
+    width: 22.94%;
+    margin-top: 5.78%;
 }
 
 .iphone-slide1-screen_first {
     position: absolute;
     z-index: 2;
-    bottom: 140px;
-    left: 83px;
+    left: 8.8%;
+    margin-top: 12.38%;
+    width: 20.65%;
 }
 
 .iphone-slide1-shadow_first {
     opacity: 0.15;
     position: absolute;
-    bottom: 58px;
-    left: 72px;
+    left: 7.7%;
+    margin-top: 5.8%;
+    width: 25.5%;
 }
 
 .iphone-slide1-home_first {
     position: absolute;
-    bottom: 91px;
-    left: 158px;
+    left: 16.9%;
+    margin-top: 49.1%;
+    width: 4.5%;
     z-index: 4;
+    transition: .5s;
 }
 
 .iphone-slide1-home_first:hover {
@@ -224,30 +305,35 @@ body {
     position: absolute;
     z-index: 1;
     transform: rotate(90deg);
-    bottom: 83px;
-    right: 218px;
+    left: 53.8%;
+    margin-top: 5.7%;
+    width: 23%;
 }
 
 .iphone-slide1-screen_second {
     position: absolute;
     z-index: 2;
-    bottom: 215px;
-    right: 159px;
+    left: 47%;
+    margin-top: 19.7%;
+    width: 36.2%;
 }    
 
 .iphone-slide1-shadow_second {
     opacity: 0.15;
     position: absolute;
     transform: scale(1, -1) rotate(90deg);
-    bottom: 58px;
-    right: 192px;
+    left: 54.1%;
+    margin-top: 5.7%;
+    width: 25.5%;
 }
 
 .iphone-slide1-home_second {
     position: absolute;
-    bottom: 291px;
-    left: 393px;
+    left: 42%;
+    margin-top: 27.8%;
+    width: 4.3%;
     z-index: 4;
+    transition: .5s;
 }
 
 .iphone-slide1-home_second:hover {
@@ -262,29 +348,33 @@ body {
 
 .iphone-slide2-cam {
     position: absolute;
-    bottom: 64px;
-    left: 343px;
+    left: 36.5%;
+    width: 24.37%;
+    margin-top: 4.7%;
     z-index: 3;
 }
 
 .iphone-slide2-screen {
     position: absolute;
     z-index: 4;
-    bottom: 131px;
-    left: 359px;
+    margin-top: 11.74%;
+    left: 38.2%;
+    width: 21.39%;
 }
 
 .iphone-slide2-shadow {
     position: absolute;
-    bottom: 38px;
-    right: 342px;
+    left: 36.5%;
+    margin-top: 4.7%;
+    width: 27.14%;
     z-index: 2;
 }
 
 .iphone-slide2-home {
     position: absolute;
-    bottom: 73px;
-    left: 435px;
+    left: 46.3%;
+    margin-top: 50.7%;
+    width: 4.8%;
     z-index: 5;
     transition: .5s;
 }
@@ -300,15 +390,17 @@ body {
 
 .iphone-slide2-phone_first {
     position: absolute;
-    bottom: 128px;
-    left: 212px;
+    left: 22.57%;
+    margin-top: 16.3%;
+    width: 16.7%;
     z-index: 1;
 }
 
 .iphone-slide2-phone_second {
     position: absolute;
-    bottom: 128px;
-    right: 211px;
+    left: 60.9%;
+    margin-top: 16.3%;
+    width: 16.7%;
     z-index: 1;
 }
 
@@ -331,75 +423,145 @@ body {
     transition: all 1s;
 }
 
+@media screen and (max-width: 767px) {
+    .iphone-slide2-cam {
+        margin-top: 1.7%;
+    }
+    .iphone-slide2-screen {
+        margin-top: 8.74%;
+    }
+    .iphone-slide2-shadow {
+        margin-top: 1.7%;
+    }
+    .iphone-slide2-home {
+        margin-top: 47.7%;
+    }
+    .iphone-slide2-iphone_first {
+        margin-top: 13.3%;
+    }
+    .iphone-slide2-iphone_second {
+        margin-top: 13.3%;
+    }
+}
+
 @media screen and (max-width: 1019px) {
-    .slider {
-        display: flex;    
-    }
-
     .iphone-slide1-cam_first {
-        position: absolute;
-        z-index: 1;
-        bottom: 130px;
-        left: 72px;
-        width: 162px;
+        left: 6.4%;
+        width: 23.7%;
+        margin-top: 5.88%;
     }
-
     .iphone-slide1-screen_first {
-        position: absolute;
-        z-index: 2;
-        bottom: 175px;
-        left: 81px;
-        width: 143px;
+        left: 7.7%;
+        margin-top: 13%;
+        width: 21.1%;
     }
-
     .iphone-slide1-shadow_first {
-        opacity: 0.15;
-        position: absolute;
-        bottom: 111px;
-        left: 72px;
-        width: 180px;
+        left: 6.5%;
+        margin-top: 6.1%;
+        width: 26.2%;
     }
-
     .iphone-slide1-home_first {
-        position: absolute;
-        bottom: 136px;
-        left: 137px;
-        z-index: 4;
-        width: 31px;
+        left: 16%;
+        margin-top: 50.6%;
+        width: 4.5%;
+        transition: none;
+    }
+    .iphone-slide1-cam-second {
+        left: 53.8%;
+        margin-top: 6.2%;
+        width: 23.64%;
+    }
+    .iphone-slide1-screen_second {
+        left: 47%;
+        margin-top: 20.8%;
+        width: 37%;
+    }
+    .iphone-slide1-shadow_second {
+        left: 54%;
+        margin-top: 6.3%;
+        width: 26.2%;
+    }
+    .iphone-slide1-home_second {
+        left: 41.7%;
+        margin-top: 29%;
+        width: 4.4%;
+        transition: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .iphone-slide1-cam_first {
+        left: 3.3%;
+        width: 25.3%;
+        margin-top: -1.12%;
+    }
+    .iphone-slide1-screen_first {
+        left: 4.9%;
+        margin-top: 6.2%;
+        width: 22.4%;
+    }
+    .iphone-slide1-shadow_first {
+        left: 3.4%;
+        margin-top: -0.9%;
+        width: 28%;
+    }
+    .iphone-slide1-home_first {
+        left: 13.5%;
+        margin-top: 46.6%;
+        width: 4.5%;
+        transition: none;
+    }
+    .iphone-slide1-cam-second {
+        left: 54%;
+        margin-top: -0.8%;
+        width: 25.3%;
+    }
+    .iphone-slide1-screen_second {
+        left: 46.8%;
+        margin-top: 14.8%;
+        width: 39.3%;
+    }
+    .iphone-slide1-shadow_second {
+        left: 54.3%;
+        margin-top: -0.7%;
+        width: 27.9%;
+    }
+    .iphone-slide1-home_second {
+        left: 41%;
+        margin-top: 23.6%;
+        width: 4.4%;
+        transition: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .arrow {
+        top: 38.5%;
+    }
+    .slider_left {
+        left: 2.4%;
+    }
+    .slider_right {
+        right: 2.4%;
     }
 
-    .iphone-slide1-cam-second {
-        position: absolute;
-        z-index: 1;
-        transform: rotate(90deg);
-        bottom: 128px;
-        right: 145px;
-        width: 162px;
+    .slider {
+        padding-top: 50px;
     }
-    
-    .iphone-slide1-screen_second {
-        position: absolute;
-        z-index: 2;
-        bottom: 228px;
-        right: 103px;
-        width: 251px;
-    }    
-    
-    .iphone-slide1-shadow_second {
-        opacity: 0.15;
-        position: absolute;
-        transform: scale(1, -1) rotate(90deg);
-        bottom: 108px;
-        right: 125px;
-        width: 180px;
+}
+
+@media screen and (max-width: 1019px) {
+    .slider_wrapper {
+        height: 58vw;
     }
-    
-    .iphone-slide1-home_second {
-        position: absolute;
-        bottom: 285px;
-        left: 296px;
-        z-index: 4;
-        width: 31px;
+}
+
+@media screen and (max-width: 480px) {
+    .slider_wrapper {
+        height: 51vw;
+    }
+    .slider {
+        padding-top: 20px;
     }
 }
 
@@ -996,7 +1158,6 @@ input[type="submit"]:hover{
 
 .footer {
     background-color: #2d303a;
-    display: flex;
 }
 
 .footer .wrapper {

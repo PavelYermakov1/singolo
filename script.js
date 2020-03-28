@@ -209,7 +209,7 @@ function closePopup() {
 
 
 const burger = document.querySelector('.burger__menu');
-// const OVERLAY = document.querySelector('.overlay-mobile');
+
 
 
 burger.addEventListener('click', (event) => {
@@ -225,30 +225,3 @@ burger.addEventListener('click', (event) => {
     
 });
 
-const MOBILEMENU = document.querySelector('#menu');
-
-MOBILEMENU.addEventListener('click', (event) => {
-    if (event.target.closest('ul li a')){
-        countOfClicks = (countOfClicks+1)%2;
-        hideMobileMenu();
-    }  else { 
-        event.stopPropagation();
-    }
-})
-
-OVERLAY.addEventListener('click', (event) => {
-    countOfClicks = (countOfClicks+1)%2;
-    hideMobileMenu();
-})
-
-function hideMobileMenu() {
-    BURGER.classList.remove('active');
-    NAVBAR.classList.remove('mobile-active-menu');
-    OVERLAY.classList.remove('active');
-}
-
-function showMobileMenu() {
-    BURGER.classList.add('active');
-    OVERLAY.classList.add('active');
-    NAVBAR.classList.add('mobile-active-menu');      
-}

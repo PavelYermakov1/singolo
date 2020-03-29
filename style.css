@@ -695,6 +695,9 @@ body {
         margin-right: 0px;
         margin-bottom: 15px;
     }
+    .our-services {
+        display: block;
+    }
 }
 
 
@@ -810,6 +813,10 @@ body {
         height: 34vw;
         background-size: cover;
     }
+
+    .portfolio {
+        display: block;
+    } 
 }
 
 .about-us {
@@ -956,6 +963,26 @@ body {
     .about-us {
         display: block;
     }
+}
+
+@media screen and (max-width: 374px) {
+    .layout-3-column {
+        align-items: flex-start;  
+    }
+    .employee {
+        width: 260px;
+        padding-bottom: 34px;
+    }
+
+    .employee__photo {
+        width: 260px;
+        height: 260px;
+    }
+
+    .tag {
+        font-size: 0.8rem;
+    }
+
 }
 
 .get-a-quote {
@@ -1131,6 +1158,9 @@ input[type="submit"]:hover{
 }
 
 @media screen and (max-width: 767px) {
+    .get-a-quote {
+        display: block;
+    }
     .get-a-quote__title {
         margin-top: 44px; 
     }

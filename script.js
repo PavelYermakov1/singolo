@@ -67,6 +67,9 @@ window.addEventListener('scroll', () => {
         navigation.classList.remove("navigation__fixed");
 }); 
 
+headerNavigation[0].addEventListener('click', (event) => {
+   window.scrollTo(0,0);
+})
 
 for (let elem of headerNavigation) {
     elem.addEventListener("click", (event) => {
@@ -198,8 +201,8 @@ closeButton.addEventListener("click", closePopup);
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     if (form.checkValidity()) {
-        popupTopicResult.textContent = (inputSubject.value) ?  "Тема: " + inputSubject.value : "Без темы";
-        popupDescriptionResult.textContent = (textarea.value) ? "Описание: " + textarea.value : "Без описания";
+        popupTopicResult.textContent = (inputSubject.value) ?  "Тема: " + inputSubject.value : "Тема: Без темы";
+        popupDescriptionResult.textContent = (textarea.value) ? "Описание: " + textarea.value : "Описание: Без описания";
         popup.classList.remove("disabled");
     }
     form.reset();

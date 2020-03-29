@@ -71,6 +71,7 @@ window.addEventListener('scroll', () => {
 for (let elem of headerNavigation) {
     elem.addEventListener("click", (event) => {
         event.preventDefault();
+
         const sectionId = elem.getAttribute("href");
         document.querySelector(`${sectionId}`).scrollIntoView({
             behavior: "smooth",
@@ -85,6 +86,10 @@ for(let elem of headerNavigation) {
         target = event.target;
         headerNavigation.forEach(e => e.classList.remove("active"));
         target.classList.toggle("active");
+        navigation.classList.remove('mobile-active-menu');
+        burger.classList.remove("active__menu");
+        document.body.style.overflow = 'auto';
+        logo.classList.remove('logo-active');
     })
 }
 
@@ -208,18 +213,21 @@ function closePopup() {
 
 
 const burger = document.querySelector('.burger__menu');
+const logo = document.querySelector('.logo');
 
-
-
+console.log(document.body.style.overflow);
 burger.addEventListener('click', (event) => {
     target = event.target;
-    console.log(getComputedStyle(navigation).display);
     if(burger.classList.contains("active__menu")){
+        document.body.style.overflow = 'auto';
         burger.classList.remove("active__menu");
-        navigation.classList.remove('mobile-active-menu');  
+        navigation.classList.remove('mobile-active-menu');
+        logo.classList.toggle('logo-active');  
     }else {
+        document.body.style.overflow = 'hidden';
         burger.classList.toggle("active__menu");
         navigation.classList.add('mobile-active-menu');
+        logo.classList.toggle('logo-active');
     }
     
 });

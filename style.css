@@ -110,7 +110,6 @@ body {
     } 
 
     .active__menu {
-        position: fixed;
         display: block;
         transform: rotate(90deg);
         z-index: 6;
@@ -123,7 +122,7 @@ body {
         top: 0%;
         display: block !important;
         width: 238px;
-        height: 100vh;
+        height: 100%;
         background: #2D303A;
         box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
         z-index: 5;
@@ -148,9 +147,15 @@ body {
     }
 
     .header .wrapper {
-        width: 75%;
+        width: 73%;
         margin-left: 0px;
-        height: 70px;
+        height: 65px;
+    }
+
+    .header {
+        position: fixed;
+        width: 100%;
+        z-index: 10;
     }
 
     .navigation_item {
@@ -159,10 +164,13 @@ body {
  
     .logo {
         z-index: 6;
-        font-size: 1.8rem;
-        position: fixed;
-        left: 100px;   
-    } 
+        font-size: 1.8rem;   
+    }
+    
+    .logo-active {
+        margin-right: 35%;   
+    }
+
 
 }
 
@@ -546,7 +554,7 @@ body {
     }
 
     .slider {
-        padding-top: 50px;
+        padding-top: 95px;
     }
 }
 
@@ -561,7 +569,7 @@ body {
         height: 51vw;
     }
     .slider {
-        padding-top: 20px;
+        padding-top: 95px;
     }
 }
 

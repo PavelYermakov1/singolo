@@ -32,6 +32,7 @@ const slideBackground = body.querySelector(".slider");
 const arrowLeft = body.querySelector('.arrow.slider_left');
 const arrowRight = body.querySelector('.arrow.slider_right');
 const navigation = body.querySelector("nav");
+let findPicturesArray = Array.prototype.slice.call(findPictures);
 let sticky = navigation.offsetTop;
 let currentItem = 0;
 let isEnabled = true;
@@ -91,10 +92,8 @@ for(let elem of headerNavigation) {
 for (let elem of potfolioNavigation) {
     elem.addEventListener("click", (event) => {
         target = event.target;
-        arr = arr.snake();
-        for(let i = 0; i < arr.length; i++) {
-            findPictures[i].src = `./assets/image/Picture-${arr[i]}.png`;
-        }
+        findPicturesArray.snake();
+        findPicturesArray.forEach( elem => document.querySelector(".layout-4-column").append(elem));
         potfolioNavigation.forEach(e => e.classList.remove("tag_selected"));
         target.classList.toggle("tag_selected");
 
@@ -194,8 +193,8 @@ closeButton.addEventListener("click", closePopup);
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     if (form.checkValidity()) {
-        popupTopicResult.innerHTML = (inputSubject.value) ?  "Тема: " + inputSubject.value : "Без темы";
-        popupDescriptionResult.innerHTML = (textarea.value) ? "Описание: " + textarea.value : "Без описания";
+        popupTopicResult.textContent = (inputSubject.value) ?  "Тема: " + inputSubject.value : "Без темы";
+        popupDescriptionResult.textContent = (textarea.value) ? "Описание: " + textarea.value : "Без описания";
         popup.classList.remove("disabled");
     }
     form.reset();

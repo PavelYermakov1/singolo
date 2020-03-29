@@ -67,8 +67,12 @@ window.addEventListener('scroll', () => {
         navigation.classList.remove("navigation__fixed");
 }); 
 
-headerNavigation[0].addEventListener('click', (event) => {
-   window.scrollTo(0,0);
+headerNavigation[0].addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    });
 })
 
 for (let elem of headerNavigation) {
@@ -218,7 +222,6 @@ function closePopup() {
 const burger = document.querySelector('.burger__menu');
 const logo = document.querySelector('.logo');
 
-console.log(document.body.style.overflow);
 burger.addEventListener('click', (event) => {
     target = event.target;
     if(burger.classList.contains("active__menu")){

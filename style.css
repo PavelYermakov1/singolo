@@ -774,7 +774,9 @@ body {
 
     .layout-4-column img {
         margin-top: 10px;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+        width: 216px;
+        height: 183px;
     }
 
     .portfolio__tags {
@@ -902,8 +904,8 @@ body {
     }
 
     .employee__photo {
-        width: 29vw;
-        height: 29vw;
+        width: 28vw;
+        height: 28vw;
     }
 
     .employee {
@@ -914,6 +916,7 @@ body {
     .layout-3-column {
         margin-top: 28px;
         margin-bottom: 75px;
+        width: 87vw;
     }
 
     .employee__social-networks {
@@ -927,6 +930,8 @@ body {
     }
 
     .layout-3-column {
+        flex-direction: column;
+        align-items: center;
         margin-top: 14px;
         margin-bottom: 12px;
     }
@@ -937,8 +942,11 @@ body {
     }
 
     .employee__photo {
-        width: 84vw;
-        height: 84vw;
+        width: 314px;
+        height: 314px;
+    }
+    .about-us {
+        display: block;
     }
 }
 

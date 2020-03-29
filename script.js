@@ -67,6 +67,9 @@ window.addEventListener('scroll', () => {
         navigation.classList.remove("navigation__fixed");
 }); 
 
+headerNavigation[0].addEventListener('click', (event) => {
+   window.scrollTo(0,0);
+})
 
 for (let elem of headerNavigation) {
     elem.addEventListener("click", (event) => {
